@@ -1,0 +1,87 @@
+S3 is highly-scalable object storage.  Spread across multiple devices and facilities.
+
+Object based storage -> Files
+Block based storage -> operating system or applications
+
+0 bytes to 5TB sized files
+
+Buckets are folders in the cloud
+Buckets have universal namespace, folders are unique locally
+
+when uploading file, will receive HTTP 200
+
+Data Consistency
+---------------
+Read after Write consistency for PUTS of new Objects
+Eventual Consistency for overwrite PUTS and DELETES (Allow time for propagation)
+
+Objects consist of 
+- key (name)
+- value (data)
+- Version ID
+- Metadata
+- Subresources
+  - ACL
+  - Torrent
+
+S3 Storage classes:
+- S3 Standard:99.99% available 99.9999999999% durability, sustains loss of 2 facilities concurrently, no retrevial fee
+- S3 - IA (Infrequently Accessed): Lower fee, but charged retrieval fee
+- S3 OneZone - IA: Only stored in 1 availability zone, no resilience
+- Glacier - cheap, only for archival
+  - Expedited
+  - Standard (3-5 hours to restore)
+  - Bulk (5-12 hours to restore) 
+
+S3 charges:
+- Storage
+- Requests
+- Storage Management Pricing (tags)
+- Data Transfer Pricing (cross region replication)
+- Transfer acceleration
+
+Encryption:
+- In Transit
+  - SSL/TLS
+- Data at rest
+  - Client Side Encryption
+  - Server Side Encryption
+    - S3 Managed Keys (SSE-S3)
+      - Per Object
+      - AES-256
+    - KMS (SSE-KMS)
+      - Seperate permissions for Envelop key 
+      - Audit trail
+    - Customer provided keys (SSE-C)
+
+Versioning:
+- Stores all versions of an object, including writes and deletes
+- Great for backups
+- Cannot be disabled, only suspended
+- Integrates with Lifecycle Rules
+- MFA Delete/Chaning Available
+- For replication, must be enabled on both source and destination
+
+Replication:
+- Regions must be unique
+- May not replicate to multiple buckets or daisy-chain
+- Existing objects not replicated, only new or modified
+- To copy files that already exist
+  - aws s3 cp --recursive s3://<SOURCE> s3://<DEST>
+- Delete markers in versioning is also replicated, but deleting those markers does not replicate
+- Reverting in source bucket must be done manually in destination bucket
+
+Lifecycle Rules:
+- Allow application to only files with prefix/suffix
+- Previous Versions have rules too with versioning turned on
+- Transistion to IA, OZ-IA, and Glacier, can also permanently delete
+
+Access to the bucket:
+- Bucket Policies
+- ACLs
+- Logging
+
+See Also:
+-----------
+https://aws.amazon.com/s3/faqs/
+https://aws.amazon.com/answers/infrastructure-management/crr-monitor/ 

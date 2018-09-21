@@ -1,0 +1,25 @@
+Allows cloud files in AWS to be treated as local files on VM
+
+- File Gateway 
+  - Uses NFS
+  - Flat files (pdf, jpg, etc)
+  - No files stored on prem
+
+- Volume Gateways (iSCSI block protocol)
+  - Asynchronously backed up, stored as EBS
+  - Snapshots are incremental backups
+  - Compressed
+  - Stored Volumes
+    - Block devices
+    - Stores entire data set locally
+    - 1Gb - 16Tb
+  - Cached Volumes
+    - Uses block devices but locally caches recent files
+    - S3 is primary storage
+    - No complete copy on premisis 
+    - up to 32 Tb in size
+
+- Tape Gateway (VTL)
+  - Vitural Tape Gateway
+
+

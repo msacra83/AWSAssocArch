@@ -1,0 +1,21 @@
+CDN delivers web content to edge locations near end users
+
+Origin - The origin of the files the CDN will distribute
+- S3
+- EC2
+- ELB
+- Route53
+- Does not have to be with AWS, can have custom origin servers
+
+Distribution - the name given to CDN which consists of a collection of Edge Locations
+
+Terminology:
+- Web Distribution - used for websites
+- RTMP - used for media streaming and flash
+
+Edge locations are not RO, you can write as well (e.g. put an object in them)
+Objects are cached for the life of the TTL
+Restrict Viewer Access allows CDN to validate using signed URLs and cookies
+Multiple origins are allowed
+Allows Georestriction
+Invalidate caching - costs money
