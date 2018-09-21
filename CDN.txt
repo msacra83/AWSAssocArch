@@ -19,3 +19,4 @@ Restrict Viewer Access allows CDN to validate using signed URLs and cookies
 Multiple origins are allowed
 Allows Georestriction
 Invalidate caching - costs money
+Default TTL 24 hours

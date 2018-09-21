@@ -7,8 +7,9 @@ Block based storage -> operating system or applications
 
 Buckets are folders in the cloud
 Buckets have universal namespace, folders are unique locally
-
+By default, buckets are private
 when uploading file, will receive HTTP 200
+Upload much faster by enabling multipart upload
 
 Data Consistency
 ---------------
@@ -27,7 +28,7 @@ Objects consist of
 S3 Storage classes:
 - S3 Standard:99.99% available 99.9999999999% durability, sustains loss of 2 facilities concurrently, no retrevial fee
 - S3 - IA (Infrequently Accessed): Lower fee, but charged retrieval fee
-- S3 OneZone - IA: Only stored in 1 availability zone, no resilience
+- S3 OneZone - IA: (RRS - Reduced Redundancy Storage) Only stored in 1 availability zone, no resilience
 - Glacier - cheap, only for archival
   - Expedited
   - Standard (3-5 hours to restore)
@@ -86,6 +87,9 @@ Transfer Acceleration:
 - bucket.s3-accelerate.amazonaws.com
 - Goes over CDN
 - Speed Comparison page to give you the best Edge location
+
+Correct URL for static website hosting:
+http://<BUCKET_NAME>.s3-website-<AWS_REGION>.amazonaws.com
 
 See Also:
 -----------
