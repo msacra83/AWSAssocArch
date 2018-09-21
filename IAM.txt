@@ -1,0 +1,22 @@
+IAM
+- Centralised control of AWS
+- Shared Access to AWS
+- Granular Permissions
+- Identity Federation
+- MFA
+- Provides Temp access to users/services
+- Set password rotation
+- Integrates with different AWS services
+- Supports PCI/DSS
+- Universal across all Regions
+
+Terms:
+Users
+Groups - collection of users under one set of permissions
+Roles - Assigned to AWS resources
+Policies - Defines one or more permissions
+Power User Access - Access to all AWS services except for management of groups and users within IAM
+
+My Billing Dashboard -> Preferences -> Manage Billing Alerts
+
+Billing alarm under CloudWatch
