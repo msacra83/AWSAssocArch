@@ -1,0 +1,19 @@
+Move large amounts of data in/out of AWS cloud, uses portable storage devices for transport.  Uses devices via snail mail.
+
+- Import to S3 
+- Export from S3 (Not Glacier)
+- Import/Export (Legacy)
+  - Send in disk
+- Snowball
+  - 50Tb - 80Tb
+  - AES-256 encryption
+  - Trusted Platform Module
+  - Software reasure of snowball
+- Snowball Edge
+  - 100Tb
+  - Compute capabilities
+  - Run lambda functions
+  - Can collect data
+- Snowmobile
+  - C-Container on truck
+  - 100Pb

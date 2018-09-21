@@ -81,6 +81,12 @@ Access to the bucket:
 - ACLs
 - Logging
 
+Transfer Acceleration:
+- Uses uploads through an Edge location
+- bucket.s3-accelerate.amazonaws.com
+- Goes over CDN
+- Speed Comparison page to give you the best Edge location
+
 See Also:
 -----------
 https://aws.amazon.com/s3/faqs/
