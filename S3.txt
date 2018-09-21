@@ -29,6 +29,7 @@ S3 Storage classes:
 - S3 Standard:99.99% available 99.9999999999% durability, sustains loss of 2 facilities concurrently, no retrevial fee
 - S3 - IA (Infrequently Accessed): Lower fee, but charged retrieval fee
 - S3 OneZone - IA: (RRS - Reduced Redundancy Storage) Only stored in 1 availability zone, no resilience
+  - 99.99% Durability
 - Glacier - cheap, only for archival
   - Expedited
   - Standard (3-5 hours to restore)
