@@ -22,3 +22,44 @@ Types:
 - Magnetic (Standard)
   - Lowest cost per GB that is bootable
   - Legacy
+
+EBS must be in same AZ as EC2
+No downtime when modifying volume
+You cannot modify a standard volume (Magnetic)
+
+How to create another ec2/ebs in another AZ:
+1. Take snapshot of EBS
+2. Create volume from snapshot in another A/Region:
+or
+1. Copy snapshot to another region
+2. Create image of snapshot (AMI)
+
+Snapshot -> backups
+Images -> AMIs
+
+Images -> AMIs
+
+AMIs can be copied to different regions
+
+Only root devices terminated by default
+
+Snapshots exist on S3, but you cannot see the snapshot bucket
+Snapshots are incremental
+To create root device snapshots, best practice is to stop the ec2, but not required
+AMIs can be created from volumes and snapshots
+EBS sizes and types can change on the fly
+Snapshots of encrypted volumes automatically encrypted, as are volumes restored from encrypted snapshots
+Encrypted snapshots may not be shared with other accounts
+
+RAID:
+AWS STRONGLY discourages RAID5
+Use RAID arrays to increase disk IO
+Usually RAID 0 or RAID 10 in AWS
+
+RAID Snapshots:
+- Take an application consistent snapshot
+  - Stop the application writing to disk
+  - Flush all caches to the disk
+    - Freeze the file system
+    - Unmount the RAID Array
+    - Shut down the EC2
