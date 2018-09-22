@@ -41,3 +41,15 @@ M - Main choice for general purpose
 C - Compute
 P - Graphics (pics)
 X - eXtreme Memory
+
+**For Exam:
+Termination protection is off by default
+Default action for root EBS is to be deleted on termination
+Encryption on DEFAULT AMIs root volumes is unavailable
+Additional volumes can be encrypted on any AMI
+1 subnet = 1 AZ, subnets cannot expand across multiple AZs
+
+System status check - underlying hypervisor
+Instance status check - checks getting traffic to OS
+
+Default root device cannot be encrypted
