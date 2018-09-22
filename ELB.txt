@@ -1,0 +1,32 @@
+3 Types of ELBs:
+  - Application
+  - Network
+  - Classic
+
+Application ELB:
+  - ALB on exam
+  - Operate on Layer 7
+  - Suited for HTTP/HTTPS
+  - Smart ELBs
+    - Advanced request routing
+
+Network ELB:
+  - NLB on exam
+  - Operate on Layer 4
+  - Suitable for Extreme performance
+  - Low-latency, high volume requests
+
+Classic ELB:
+  - ELB on exam
+  - Legacy, soon to be depricated
+  - Can use Layer 7 some features (X-Forward and sticky sessions)
+  - Can use Layer 4 for pure TCP
+  - Layer 7 less intelligent than ALB
+  
+Errors:
+ - 504 application stopped responding, ELB is fine
+   - Could be server, or DB
+
+X-Forwarded-For Header:
+  - Devices behind ELB can see originating IP, but devices IP is NATed
+  - Devices get the originating IP from the X-Forwarded-For Header

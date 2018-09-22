@@ -1,0 +1,6 @@
+Selection based on:
+- Region
+- OS
+- Arch
+- Launch Permissions
+- Root device volume (EPHEMERAL STORAGE or EBS)

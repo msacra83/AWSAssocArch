@@ -1,0 +1,12 @@
+Instance Store:
+ - Referred to as Ephemeral Storage
+ - Restricted Instance Types
+ - May be attached only at time of EC2 creation, not additional storage
+ - Instance stores cannot be stopped, only rebooted or terminated
+ - Less durability
+ - Precursor to EBS
+ - Can be detached/reattached on the fly, even with EC2 running
+ - Root device AMI is an instance store volume created from a template stored in S3
+ - If the hosts fails, all data is lost
+ - Root volumes are deleted on termination
+
