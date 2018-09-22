@@ -1,0 +1,10 @@
+SG rules take affect immediately
+SG are stateful, Inbound rules are automatically allowed back out
+SG rules do not allow DENY, everything blocked by default
+Multiple SG allowed on single instance
+
+Difference between SG and NACL:
+SG are stateful
+NACL are stateless
+
+SG cannot block specific IP addresses, use NACL 
