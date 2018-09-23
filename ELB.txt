@@ -30,3 +30,19 @@ Errors:
 X-Forwarded-For Header:
   - Devices behind ELB can see originating IP, but devices IP is NATed
   - Devices get the originating IP from the X-Forwarded-For Header
+
+Health Check Details:
+  - Response timeout: time the HC waits for a response from instance
+  - Interval: time between health checks
+  - Unhealthy threshold: number of consecutive response timeouts before an instance is declared unhealthy
+  - Healthy threshold: number of consecutive responses before an instance is placed back in LB
+
+Monitored instances:
+  - InService
+  - OutOfService
+
+All ELBs have a DNS, IP is not provided 
+
+---------------
+See Also:
+https://aws.amazon.com/elasticloadbalancing/faqs/
