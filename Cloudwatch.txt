@@ -1,2 +1,24 @@
+Cloudwatch:
+  - Dashboards
+  - Alarms
+  - Events
+  - Logs
+
 Understand default metrics
+Know what metrics are available by default for EC2 Instance
+  - CPU
+  - Disk
+  - Network
+  - Status
+
+RAM is not available by default, will require a custom metric
+
+Events respond to state changes in AWS Resources 
+  - E.g. Automatically run lambda to update route53 when EC2 is in running state
+
+Logs allow you to monitor events at the application level
+
+Standard monitoring = 5 Min
+Detailed monitoring = 1 Min
+
 
