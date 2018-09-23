@@ -1,0 +1,3 @@
+us-east-1 -> Region
+us-east-1b -> AZ
+

@@ -20,3 +20,9 @@ Power User Access - Access to all AWS services except for management of groups a
 My Billing Dashboard -> Preferences -> Manage Billing Alerts
 
 Billing alarm under CloudWatch
+
+Roles:
+Service-linked roles is for Amazon Lex to manage bots
+Roles are available fore id provider access (such as Google, Facebook)
+
+IAM Roles can be attached to running instances
