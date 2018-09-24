@@ -1,0 +1,8 @@
+Launch Configuration:
+
+Auto Scaling:
+  - Spans multiple AZs
+  - Health Check grace period is length of time AS waits before checking health status
+    - Begins when EC2 first comes into service
+  - Scaling policies
+    - Increase/decrease based on metrics

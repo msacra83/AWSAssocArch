@@ -1,0 +1,11 @@
+Elastic File System
+  - Capacity is elastic, and grows and shrinks on demand
+  - Can mount to multiple EC2 instances
+  - Supports NFSv4
+  - No pre-provisioning, only pay for storage used
+  - Scale up to petabytes
+  - Can support thousands of concurrent NFS connections
+  - Stored across multiple AZs withing region
+  - Block based storage
+  - Read after write consistency
+  - Use as a fileserver

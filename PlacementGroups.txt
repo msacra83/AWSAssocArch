@@ -1,0 +1,18 @@
+Requires unique name across AWS account
+Recommend homogenous instances within Placement Group (same size, family)
+You can't merge placement groups
+You cannot move an existing instance into a placement group
+You can use custom AMIs
+
+Clustered Placement Group
+  - ** Within a single AZ
+  - For low netowork latency and/or high throughpout
+  - Allows only certain instances (Computer, GPU, Memory, Storage) 
+  - Default, if exam says "Placement Group", it means clustered
+  - E.g Cassandra
+
+Spread Placement Group
+  - Unlikely to be on Exam
+  - Each placed on distinct underlying hardware
+  - Can span multiple AZ
+  - For redundancy of critical instances
