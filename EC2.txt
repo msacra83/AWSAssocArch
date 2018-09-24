@@ -53,3 +53,4 @@ System status check - underlying hypervisor
 Instance status check - checks getting traffic to OS
 
 Default root device cannot be encrypted
+Key pairs do not propagate across regions
