@@ -1,0 +1,61 @@
+Lambda encapsulates:
+  - Data center
+  - Hardware
+  - Assembly Code/Protocols
+  - High level languages
+  - OS
+  - Application Layer/AWS APIs
+
+Uses:
+  - Event driven compute service
+  - Runs code in repsonse to HTTP requests
+
+Scales out (not up) automatically
+1 Lambda processes per request
+
+Serverless services:
+  - Lambda
+  - DynamoDB
+  - S3
+  - API Gateway
+
+Lambda functions can trigger other functions
+
+Debug using AWS X-ray
+
+Can do things globally
+
+Triggers**:
+  - API Gateway*
+    - Handles HTTP requests
+  - AWS IoT
+  - Alexa Skills Kit*
+  - Alexa Smart Home
+  - CloudFront*
+  - Cloudwatch Events*
+  - Cloudwatch Logs*
+  - CodeCommit
+  - Cognito Sync Trigger
+  - DynamoDB*
+  - Kinesis*
+  - S3*
+  - SNS*
+  
+Languages supported:
+  - NodeJs
+  - Java
+  - C#
+  - Python
+  - Go
+
+Priced:
+  - Number of requests
+    - First 1 million free
+    - 0.20 per subsequent 1 million
+  - Duration
+    - Calculated from beginning executing until it returns or terminates
+      - Rounded up to nearest 100 ms
+    - Amount of memory consumed
+      - .00001667 for every GB second used
+    - Max threshold, 5 min
+
