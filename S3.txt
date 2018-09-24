@@ -92,6 +92,8 @@ Transfer Acceleration:
 Correct URL for static website hosting:
 http://<BUCKET_NAME>.s3-website-<AWS_REGION>.amazonaws.com
 
+Bucket name must be same as either FQDN or 2nd tier domain (e.g. sacra.com can be sacra.com bucket or just sacra bucket)
+
 See Also:
 -----------
 https://aws.amazon.com/s3/faqs/
