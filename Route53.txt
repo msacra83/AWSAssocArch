@@ -1,0 +1,20 @@
+Route53 name comes from Route 66 variant on port 53
+
+SOA: 
+ - Name of the server that supplied data for the zone
+ - Admin of zon
+ - Current version of the data file
+ - TTL
+
+NS:
+ - Name server records
+ - Used by TLD servers to direct to content DNS
+
+A Record:
+ - Most fundamental type of DNS
+ - A stands for address
+
+Difference in CNAME and Alias:
+  - CNAME cannot be used for naked domain names such as sacra.com, only FQDN such as mail.sacra.com.  Useful when pointing to ELBs and S3 buckets
+
+
