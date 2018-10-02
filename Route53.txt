@@ -22,6 +22,7 @@ Routing Policies:
   - Simple Routing
     - Only allowed 1 record with multiple IP addresses
     - Multiple IPs returns all values in a random order
+    - Does not allow healthchecks
   - Weighted Routed
     - Sends disproportionate amount off traffic to different IP addresses, split traffic on different weights assigned
     - E.g. 20% go to us-east-1, 80% go to us-west-1
