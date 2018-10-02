@@ -29,5 +29,21 @@ Routing Policies:
   - Latency-based Routing
     - Allows traffic based on the lowest network latency for the end user
   - Failover Routing
+    - Used to create active/passive setup
+    - E.g. Primary site eu-east-1 and Secondary DR us-west-2
+    - Route 53 will monitor the health of the primary site using a health check
+    - Monitors health of end points
+    - Lowering TTL allows for faster failover
   - Geolocation Routing
+    - Choose where traffic will be sent based on location of end users
   - Multivalue Answer Routing
+    - Allows multiple IP addresses
+    - Can be autoremoved pending healthchecks
+    - Randomly distribute IPs
+    - Can allocate 1 record for each resource
+
+Healthchecks can monitor:
+  - Endpoints
+  - Status of other health checks
+  - State of CloudWatch alarm
+  - Takes some time for the status to come online
