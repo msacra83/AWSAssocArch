@@ -13,8 +13,21 @@ NS:
 A Record:
  - Most fundamental type of DNS
  - A stands for address
+ - Cant mix and match except for small exceptions
 
 Difference in CNAME and Alias:
   - CNAME cannot be used for naked domain names such as sacra.com, only FQDN such as mail.sacra.com.  Useful when pointing to ELBs and S3 buckets
 
-
+Routing Policies:
+  - Simple Routing
+    - Only allowed 1 record with multiple IP addresses
+    - Multiple IPs returns all values in a random order
+  - Weighted Routed
+    - Sends disproportionate amount off traffic to different IP addresses, split traffic on different weights assigned
+    - E.g. 20% go to us-east-1, 80% go to us-west-1
+    - Weight is whole number that repersents requests out of total of whole numbers
+  - Latency-based Routing
+    - Allows traffic based on the lowest network latency for the end user
+  - Failover Routing
+  - Geolocation Routing
+  - Multivalue Answer Routing
