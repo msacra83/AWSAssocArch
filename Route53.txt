@@ -17,6 +17,9 @@ A Record:
 
 Difference in CNAME and Alias:
   - CNAME cannot be used for naked domain names such as sacra.com, only FQDN such as mail.sacra.com.  Useful when pointing to ELBs and S3 buckets
+  - Naked domains are also called zone apex records
+
+A total of 50 domains are allowed by default, however, it can be raised by AWS
 
 Routing Policies:
   - Simple Routing
