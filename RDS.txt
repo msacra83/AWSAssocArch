@@ -1,0 +1,50 @@
+Automated Backups:
+  - Automated Backups
+    - Allow recovery from retention period (between 7-35 days)
+    - Take full daily snapshot and store transaction logs throughout the day
+    - During recovery, AWS will use most recent backup and apply transaction logs
+    - This allows a point int time recovery down to the second
+    - Enabled by default
+    - Stored in S3
+    - Free storage space equal to the size of your DB
+    - Taken within a defined window
+    - During window, storage I/O may be degraded, as well as latency issues
+    - Deleted when RDS is deleted
+  - Database Snapshots
+    - User initiated
+    - Stored after RDS is deleted
+
+Restoration:
+  - With both Automated and Snapshots, the restored DB will be a new RDS instance with new DNS endpoint
+
+Encryption:
+  - At rest is supported for RDS
+  - Uses AWS KMS
+  - Once DB is encrypted, data stored, backups, read replicas, and snapsots are all encrypted
+  - Encrypting an existing DB not currently supported.
+  - To encrypt current DB, create snapshot, make a copy, and encrypt the copy
+
+Multi-AZ:
+  - Standard Master/Slave
+  - Auto fail over between AZ
+  - AWS updates DNS in event of failover, never use IPs
+  - AWS handles replication
+  - FOR DISASTER RECOVERY ONLY!!!!
+  - Not for performance
+  - Synchronous
+
+Read Replica:
+  - Up to 5 read replicas by default
+  - Write to primary, read from secondary
+  - Could have Read Replicas can be in different AZ or region
+  - Read Replicas of Read Replicas are allowed
+  - Allow you to have a RO copy of DB
+  - Asynchronous
+  - Not available for SQL Server or Oracle
+  - Used for SCALING, not DR!
+  - Automatic backups must be turned on
+  - Each Read Replica has its own DNS Endpoint
+  - Read Replicas can have Multi-AZ enabled
+  - Can create Read Replicas of Multi-AZ source DBs
+  - Can be promoted to be their own DBs (breaks replication)
+  - Can have encryption enabled, even if primary DB does not use it

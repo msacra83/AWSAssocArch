@@ -1,0 +1,43 @@
+RDS (OLTP):
+  - Traditional spreadsheet
+  - Tables
+  - Rows
+  - Fields (Columns)
+  - Fields must be same for all rows
+  - SQL Server, Oracle, MySql, Postgres, Aurora, MariaDB
+
+Non RDS (DynamoDB):
+  - Database
+    - Collection = Table
+    - Document = Row
+    - Key Value Pairs = Fields
+  - Proceeding Documents do not dictate how many Fields there are, Columns do not need to match
+  - JSON/NoSQL
+
+Data Warehousing (OLAP):
+  - Used for business intelligence
+    - Cognos
+    - RedShift
+    - Jaspersoft
+    - SQL Server Reporting Services
+    - Oracle Hyperion
+    - SAP NetWeaver
+  - Pull large and complex data sets
+
+OLTP (Online Transaction Processing) vs OLAP (Online Analytics Processing):
+  - OLTP:
+    - SELECT * FROM ORDERS WHERE ORDER_ID=2120121
+  - OLAP (RedShift):
+    - Used in Data Warehousing
+    - Pulls in large number of records
+      - Sum of Radios sold in EMEA
+      - Sum of Radios sold in Pacific
+      - Unit cost of each radio in each region
+      - Sales price of each radio
+      - Sales price - unit cost
+    - Use different type of architecture both from database and infra layer
+
+Elasticache:
+  - Allows you to retrieve information quicker (cached), retrieve from in-memory caches instead of disks
+  - Memcached
+  - Redis
