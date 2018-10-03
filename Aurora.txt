@@ -1,0 +1,17 @@
+Aurora provides 5X better performance than MySQL
+
+Scaling:
+  - Scales in 10G increments up to 64TB
+  - Storage Autoscales
+  - Compute resources can scale up to 32vCPU and 244G of mem
+  - Downtime required for scaling
+  - 2 Copies of DB in each AZ, with minimum 3 AZ
+  - Can handle loss of 2 copies of data without affecting write availability and 3 without affecting read
+  - Storage is self-healing
+
+Replicas:
+  - Aurora Replicas (up to 15)
+  - MySQL Read Replica (up to 5)
+    - Failover will not automatically occur to MySQL
+
+Use cluster endpoint, not instance endpoint

@@ -1,0 +1,43 @@
+RedShift:
+  - Petabyte-scale data warehouse
+
+Configuration:
+  - Single Node (160G)
+  - Mutli-Node
+    - Leader Node
+      - Manages client connections and receives queries
+    - Compute Node
+      - Store data and perform queries
+      - up to 128 compute nodes
+
+Columnar Data Storage:
+  - Instead of storing data in rows, organizes data by column
+  - Row based systems optiman for transaction processing
+  - Column-based systems ideal for data warehousing and analytics, where queries aggregate over large data sets
+  - Columnar is stored sequentially on storage media, far fewer I/O, improves query performance
+
+Advanced Compression:
+  - Compressed much more than row based data because similiar data is store sequentially on disk
+  - Multiple compression techniques are deployable
+  - Doesnt require indexes or materialized vies
+  - Uses less disk space than traditional RDS
+  - When loading data, Redshift samples data and selects most appropriate compression scheme
+
+Massively Parallel Processing (MPP):
+  - Automatically distributes data and query load across all nodes
+  - Allows easily adding compute nodes
+
+Pricing:
+  - Compute Node Hours, 1 unit per node per hour
+  - Not charged for leader, only compute nodes
+  - Backup
+  - Data transfer within VPC
+
+Security:
+  - Encrypted in transit using SSL
+  - Encrypted at rest AES-256
+  - RedShift takes care of key managment, but can also be done through kms and HSM
+
+Availability:
+  - Only available in 1 AZ
+  - Can restore snapshots to new AZ's during outage

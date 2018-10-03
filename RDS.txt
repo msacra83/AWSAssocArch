@@ -48,3 +48,5 @@ Read Replica:
   - Can create Read Replicas of Multi-AZ source DBs
   - Can be promoted to be their own DBs (breaks replication)
   - Can have encryption enabled, even if primary DB does not use it
+
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS 

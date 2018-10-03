@@ -1,0 +1,24 @@
+DynamoDB:
+  - single-digit millisecond latency at any scale
+  - Supports both document and key-value data models
+  - Stored on SSD
+  - Spread across 3 geo distinct dcs
+  - Different consistent read models
+    - Eventual Consistent Reads (Default)
+      - Consistency across all copies of data is usually within a  second
+      - Repeating a read after a short time should return the updated data
+      - Best Read Performance
+    - Strongly consistent reads
+      - Returns all writes that were successful prior to the read
+
+Pricing:
+ - Based on provisioned throughput capacity
+   - Write .0065/hr for every 10 units
+   - Read .0065/hr for every 50 units
+ - Storage is .25/G/Mo
+ - 1 write capacity unit can handle 1 write per second
+ - Read capacity unit billed in blocks of 50, Write capacity billed in blocks of 10
+ - Reserved capacity in 1-3 year contract saves money
+
+Append adds field after current field, insert adds field before
+Much easier to scale

@@ -1,0 +1,14 @@
+Improves Latency and throughput for read-heavy application workloads or compute intensive workloads
+
+2 engines available:
+  - Memcached
+    - Widley adopted memory object caching system
+    - Protocol compliant with Memcached
+  - Redis
+    - Open source in-memory key-value store supports data structures (sets and lists)
+    - Master/Slave replication in Multi-AZ
+
+For exam:
+  - Typically given scenario where DB is under a lot of stress, will ask which service you should use to alleviate
+  - Elasticache good choice for read heavy and not prone to change db
+  - RedShit is good answer if DB is under stress because management running OLAP
