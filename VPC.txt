@@ -1,0 +1,48 @@
+Virtual Private Cloud (Datacenter)
+
+Allows an isolated section of the cloud.  You have complete control over virual network.
+
+You are able to connect hardware vpns to vpcs
+
+External connections:
+  - Internet Gateway
+  - VPN
+
+Security Groups can span subnets
+
+Softlimit of 5 VPCs per region
+
+Launch instances into subnet of choosing
+
+Configure route tables between subnets
+
+Create Internet Gateways, only allowed 1 IG per VPC
+
+Default VPC
+  - User friendly, allows you to immediately deploy instances
+  - No private subnets in default VPCs
+  - Each EC2 instance will have public/private IP address
+
+VPC Peering
+  - Connect one VPC to another using a direct network route with private IP
+  - Instances behave as if they are on the same private netowrk
+  - You can peer VPCs with other AWS accounts
+  - 1 Central VPC with 4 others
+  - NO TRANSITIVE PEERING
+
+1 Subnet = 1 AZ
+
+Security groups are Stateful, NACLs are stateless
+
+Dedicated Tenancy is on dedicated hardware
+
+Creating a new VPC will create route, IG, NACL, SG, Will not create Subnet
+
+5 IP Addresses of subnet will always be reserved (First 4 and last):
+  - Network Address (1st)
+  - Reserved by AWS by VPC Router (2nd)
+  - Reserved by AWS for DNS (3rd)
+  - Reserved by AWS for future use (4th)
+  - Broadcast (last)
+
+All subnets by default are associated with the main route table
