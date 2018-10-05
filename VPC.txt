@@ -46,3 +46,29 @@ Creating a new VPC will create route, IG, NACL, SG, Will not create Subnet
   - Broadcast (last)
 
 All subnets by default are associated with the main route table
+
+2 Subnets must be specified for ELBs
+
+Flow Logs:
+  - Allows you to capture info about IP traffic to your VPC
+  - Stored in CloudWatch
+  - Able to be created at 3 levels:
+    - VPC
+      - Capture all traffic within VPC
+    - Subnet
+      - Capture all traffic in subnet
+    - Network Interface
+  - You cannot enable flow logs for VPCs peered with your account, unless the peer VPC is in your account
+  - Cannot be tagged
+  - Once created, you cannot change the configuration
+  - Not all traffic is monitored (e.g. DNS, windows license activation, DHCP, 169.254.169.254)
+
+NAT instances always behind security group, NAT gateways are security group independent
+NAT gateways, AWS autopatches, and have HA
+
+Bastion HA:
+  - Multiple subnets (at least 2 public)
+  - Autoscaling
+
+NAT is used to provide traffic to EC2s in private subnets
+Bastion is used to securly admin servers

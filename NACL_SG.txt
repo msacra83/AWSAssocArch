@@ -1,0 +1,20 @@
+**You can only have a subnet to 1 NACL, not multiple
+
+By default, when you create private NACL, everything is DENY/DENY on egress and ingress
+
+Start at rule 100, and increase in increments of 100
+
+Add ports 1024-65535 for outgoing connections (ephemeral ports)
+
+Rules are evaluated in numerical order
+
+NACL rules are applied immediately, if ALL ALLOW is 100, and DENY 192.168.11.11 is 101, 192.168.11.11 is allowed.
+If DENY 192.168.11.11 is 100, then ALL ALLOW is 101, 192.168.11.11 is blocked
+
+Each subnet in VPC must be associated with NACL, if you havent explicitly associated a subnet with a NACL, the subnet is automatically added to the default NACL.
+
+You can associate a NACL with multiple subnets, but subnets can only be associated with one NACL.  When you associate a NACL with a subnet, the previous association is removed.
+
+Assessed before SGs
+
+SGs cannot block specific ips
