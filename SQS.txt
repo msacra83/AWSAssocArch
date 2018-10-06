@@ -1,0 +1,35 @@
+SQS is a web service that gives you access to a message queue that can be used to store messages
+
+Distrubuted queue system, temporarily stores messages for processing
+
+Autoscaling group could sit behind SQS, and monitor SQS
+
+When message is picked, it is in invisible for timeout period, if it times out, it reappears for another application to grab unless it is marked cleared
+
+Allows you to decouple components of application
+
+Up to 256kb of text in a message, any format
+
+Pull based, not push  based
+
+Messages kept in queue from 1 min to 14 days
+
+Default retention period is 4 days
+
+Queue types:
+  - Standard
+    - Default
+    - High output, but more than one copy may be delivered out of order
+    - Uses best-effort ordering to ensure the messages are delivered
+    - Nearly unlimited transactions per second
+  - FIFO
+    - Guarenteed to be delieved in which they arrive
+    - Order strictly preserved
+    - Duplciates never introduced
+    - Limited to 300 transactions per second
+
+  Visibility timeout:
+    - Default is 30 seconds
+    - Maximum is 12 hours
+
+  Long polling doesnt return a response unless message is in queue unless times out, saves money

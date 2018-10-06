@@ -72,3 +72,35 @@ Bastion HA:
 
 NAT is used to provide traffic to EC2s in private subnets
 Bastion is used to securly admin servers
+
+Endpoints:
+  - Internal gateway within AWS
+  - Source IPs will be private IPs
+
+Parts of VPC:
+  - Routing tables
+  - NACLs
+  - Security groups
+  - Internet Gateways
+  - Subnets
+  - VPN attachments
+  - VPC Peering connections
+  - Network Interfaces
+
+NAT Instances:
+  - Disable source/destination check on the instance
+  - Must be in public subnet
+  - Must have route out of private subnet to the NAT instance
+  - Amount of traffic NAT instance can support depends on instance size
+  - Create HA using autoscaling groups, multiple subnets in different AZs. script to automate failover
+  - Behind security group
+
+NAT Gateways:
+  - Enterprise
+  - Scale up automatically to 10Gbps
+  - No need to patch
+  - Not associated with security groups
+  - Auto assigned a public ip
+  - Update route tables
+  - No need to disable source/destination check
+  - More secure
