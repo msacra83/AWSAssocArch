@@ -1,0 +1,7 @@
+Allows notification from the cloud
+Push notification to Apple, Google, Fire, Windows, Android
+Text Messages or email
+In exams, is usually in autoscaling
+Topic is an access point
+Instantaneous, push based delivery (SQS is pull)
+

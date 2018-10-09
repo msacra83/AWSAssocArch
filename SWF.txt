@@ -1,0 +1,24 @@
+Allows web applications to be designed as a coordination of tasks
+Tasks are invocations of various processing steps (similiar to Cloudwatch events)
+
+Workers are programs that work with SWF
+  - Gets Task
+  - Process received task
+  - Return Results
+
+Deciders controls the coordination of tasks
+
+SWF ensures a task is assigned only once, and never duplicated
+
+Difference between SWF and SQS, SWF a task is only assigned once, never duplicated
+
+SQS can have multiple assignments and duplication (depending on settings)
+
+Domains isolate set to types, execution, and tasks lists
+
+Parameters are specified in JSON
+
+Max workflow can be 1 year, measured in seconds
+
+SWF is task orientate api, and can involve human interaction, and can last longer
+SQS is message orientated
