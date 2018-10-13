@@ -1,0 +1,21 @@
+Streaming data is generated continuously by thousands of sources, in smaller sizes (eg stock prices)
+
+Kinesis is a platform for loading, analyzing streaming data
+
+Core:
+  - Streams
+    - Stores by default 24hr, max 7 days
+    - Stored in shards
+    - 1 shard = 5 transactions/sec for reads, 2MB or 1k record/sec for writes, max total data write of 1MB/sec
+    - Producers -> Kinesis Stream -> Consumers -> DB
+  - Firehose
+    - Analyzes data and/or sends to S3 or other locations
+    - No data retention
+    - Doesnt have consumers
+    - Producers -> Firehose -> DB/S3
+    - No Shards!!
+    - Auto use Lambda!
+  - Analytics
+    - Run SQL queries of streaming data
+    - Stores results in DB/S3
+    - Can use across streams and firehose

@@ -1,0 +1,21 @@
+Publish, maintain, monitor, and secure APIs at any scale
+
+API Caching
+  - Speeds up response rate
+  - Reduce number of calls to endpoint
+  - Reduce latency
+  - Caches responses for a TTL
+
+API Gateway
+  - Low Cost & Effecient
+  - Scales Effortlessly
+  - You can throttle requests to prevent attacks
+  - Connect to cloudwatch
+
+Same Origin Policy 
+  - Web browser permist scripts in first web page to access data in second web page, only if both web pages have same origin
+
+Cross-Origin Resource Sharing (CORS)
+  - CORS on the server (not clinet) can relax same-origin policy
+  - allows restricted resources on a webpage to be requested from another domain
+  - Error "Origin policy cannot be read at the remote resource", enable CORS

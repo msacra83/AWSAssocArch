@@ -33,3 +33,7 @@ Queue types:
     - Maximum is 12 hours
 
   Long polling doesnt return a response unless message is in queue unless times out, saves money
+
+See Also:
+-------------
+https://aws.amazon.com/sqs/faqs/
