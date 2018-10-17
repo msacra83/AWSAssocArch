@@ -1,0 +1,32 @@
+Business Benefits:
+  - Almost zero upfront infrastructure investment
+  - Just-in-time Infrastructure
+  - Effecient resource utilization
+  - Usage-based costing
+  - Reduced time to Market
+
+Technical Benefits:
+  - IaC
+  - Auto-Scaling
+  - Proactive Scaling
+  - Effecient dev lifecycle
+  - Improved Testability
+  - DR and business continuity
+  - Overflow traffic to the cloud
+
+Design for Failure:
+  - Be a pessimist when designing architecture 
+
+Decouple your components (SQS = decoupling)
+  - not have tight dependencies on each other
+  - loose coupling isolates various layers 
+  - On batch processing, you can create asynchronous components
+
+Impliment Elasticity:
+  - Proactive cyclic Scaling, occurs at fixed intervals
+  - Proactive event scaling, occurs during e.g. new product launch in anticipation of event
+  - Auto-scaling, based on demand
+
+Secure your application:
+  - Only allow necessary ports
+  
