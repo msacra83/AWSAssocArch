@@ -1,0 +1,66 @@
+Design Principles:
+  - Apply security at all layers
+  - Enable traceability
+  - Automate response to security events
+  - Focus on securing your system
+  - Automate security best practices
+
+Definition**:
+  - Data Protection
+    - Basic data classification (public vs how much restriction)
+    - Implement a least privilege access system
+    - Need to know basis
+    - Encrypt where possible
+    - AWS enables:
+      - Customers maintain full control over data
+      - Allow key encryption, management, and rotation
+      - Detailed logging is available
+      - Designed storage systems for exceptional resiliency
+      - Versioning
+      - AWS never initiates movement of data between regions
+  - Privilege Management
+    - ACL
+    - Roles
+    - Password Management
+  - Infrastructure Protection
+    - How you protect your data center
+    - Outside of AWS
+    - RFID, Locks, CCTV, etc
+    - Infra managment in regards to AWS is only at VPC level
+  - Detective Controls
+    - CloudTrail
+    - CloudWatch
+    - Config
+    - S3
+    - Glacier
+
+Definition Questions:
+  - Data Protection
+    - How are you encrypting and protecting your data at rest?
+    - How are you encrypting and protecting your data in transit? (SSL)
+  - Privilege Management
+    - How are you protecting acces to and use of the AWS root account credentials?
+    - How are you defining roles and responsibilities of system users to control human access to the AWS Management Console and APIs?
+    - How are you limiting automated access (scripts, 3rd party tools, etc) to AWS Resources?
+    - How are you managing keys and credentials?
+  - Infrastructure Protection
+    - How are you enforcing network and host-level boundary protection?
+    - How are you enforcing AWS service level protection?
+    - How are you protecting the integrity of the OS on your EC2 instances (A/V)?
+  - Detective Controls
+    - How are you capturing and analyzing AWS logs?
+
+Key AWS Services:
+  - Data Protection
+    - ELB
+    - EBS
+    - S3
+    - RDS
+  - Privilege Management
+    - IAM,MFA
+  - Infrastructure Protection
+    - VPC
+  - Detective Controls
+    - Cloudtrail
+    - Config
+    - CloudWatch

@@ -29,4 +29,11 @@ Impliment Elasticity:
 
 Secure your application:
   - Only allow necessary ports
-  
+ 
+General Design Principles:
+  - Stop guess capacity
+  - Test at prod scale
+  - Automate
+  - Allow evolutionary architectures
+  - Data-Driven architectures
+  - Improve through game days

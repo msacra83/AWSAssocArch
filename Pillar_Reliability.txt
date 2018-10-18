@@ -1,0 +1,29 @@
+Design Principles:
+  - Test Recovery Procedures
+  - Automatic recover from failure
+  - Scale horizontally to increase aggregate system availability
+  - Stop guessing capacity
+
+Definition**:
+  - Foundations
+    - AWS Service Limits to prevent over provisioning
+    - How are you managint AWS service limits for your account?
+    - How are you planning network topology?
+    - Do you have an escalation path to deal with technical issues?
+  - Change Management
+    - How does your system adapt to changes in demand?
+    - How are you monitoring AWS Resources?
+    - How are you executing change management?
+  - Failure Management
+    - How are you backing up your data?
+    - How does your system withstand component failure?
+    - How are you planning for recovery?
+
+Key AWS Services:
+  - Foundations
+    - IAM
+    - VPC
+  - Change Management
+    - CloudTrail
+  - Failure Management
+    - CloudFormation
