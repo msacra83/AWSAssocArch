@@ -1,0 +1,22 @@
+Design Principles:
+  - Transparently attribute expenditure
+  - Use managed services to reduce cost of ownership
+  - Trade capital expense for operating expense
+  - Benefit from economies of scale
+  - Stop spending money on DC operations
+
+Definition:
+  - Match supply and demand
+    - How do you make sure your capacity matches but doesnt exceed what you need?
+    - How are you optimizing your usage of AWS Services?
+  - Cost effective resources
+    - Have you selected the appropriate resource types to meet your cost targets?
+    - Have you selected the appropriate pricing model to meet your cost targets?
+    - Are there managed services that you can use to improve your ROI?
+  - Expenditure awareness
+    - What access controls and procedures do you have in place to govern AWS costs?
+    - How are you monitoring usage and spending?
+    - How do you decomission resources that you no longer need, or stop resources that are temporarily not needed?
+    - How do you consider data transfer charges when designing your architecture?
+  - Optimizing over time
+    - How do you manage/consider adoption of new services?

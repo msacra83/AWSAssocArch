@@ -1,0 +1,27 @@
+Design Principles:
+  - Democratize advanced technologies
+  - Go global in minutes
+  - Use serverless architecture
+  - Experiment more often
+
+Definition:
+  - Compute
+    - How do you select the appropriate instance type for your system?
+    - How do you ensure that you continue to have the most appropriate instance type as new ones are introduced?
+    - How do you monitor instances post launch to ensure they are performing?
+    - How do you ensure the quantity matches the demand?
+  - Storage
+    - How do you select the appropriate storage solution for your system?
+    - How do you ensure that you continue to have the most appropriate storage solution as new storage solutions and features are launched?
+    - How do you monitor your storage solution to ensure it is performing as expected?
+    - How do you ensure the capacity and throughput of your storage matches demand?
+  - DB
+    - How do you select the appropriate DB solution?
+    - How do you ensure you have the most appropriate DB solutions and features as new ones are launched?
+    - How do you monitor to ensure performance is as expected?
+    - How do you ensure the capacity and throughput of your db matches demand?
+  -Space-time Trade-off
+    - How do you select the appropriate proximity and caching for your system?
+    - How do you ensure that you continue to have the most appropriate proximity and caching solutions as new solutions are launched?
+    - How do you monitor your proximity and caching solutions to ensure performance is as expected?
+    - How do you ensure that the proximity and caching solutions you have matches demand?
