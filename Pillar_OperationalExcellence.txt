@@ -1,0 +1,18 @@
+Design Principles:
+  - Perform operations with code
+  - Align operation processes to business objectives
+  - Make regular, small, incremental changes
+  - Test for responses to unexpected events
+  - Learn from operation events and failures
+  - Keep operations procedures current
+
+Definition:
+  - Preparation
+    - What best practices for cloud operations are you using?
+    - How are you doing config management for your workload?
+  - Operation
+    - How are you evolving your workload while minimizing the impact of change?
+    - How do you monitor your workload to ensure it is operating as expected?
+  - Response
+    - How do you respond to an unplanned operational events?
+    - How is escalation managed when responding to an unplanned event?
