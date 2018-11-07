@@ -48,6 +48,8 @@ Default action for root EBS is to be deleted on termination
 Encryption on DEFAULT AMIs root volumes is unavailable
 Additional volumes can be encrypted on any AMI
 1 subnet = 1 AZ, subnets cannot expand across multiple AZs
+EBS Backed volumes are persistent
+Instance store are not persistent (ephemeral)
 
 System status check - underlying hypervisor
 Instance status check - checks getting traffic to OS

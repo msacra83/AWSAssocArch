@@ -7,6 +7,7 @@ Automated Backups:
     - Enabled by default
     - Stored in S3
     - Free storage space equal to the size of your DB
+    - Cannot increase storage on SQL Server
     - Taken within a defined window
     - During window, storage I/O may be degraded, as well as latency issues
     - Deleted when RDS is deleted
@@ -50,3 +51,4 @@ Read Replica:
   - Can have encryption enabled, even if primary DB does not use it
 
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS 
+http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RebootDBInstance.html

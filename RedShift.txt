@@ -38,6 +38,8 @@ Security:
   - Encrypted at rest AES-256
   - RedShift takes care of key managment, but can also be done through kms and HSM
 
+WLM (Work load management) Parameters define the number of query queues available
+
 Availability:
   - Only available in 1 AZ
   - Can restore snapshots to new AZ's during outage

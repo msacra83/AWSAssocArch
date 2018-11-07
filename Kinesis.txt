@@ -1,3 +1,5 @@
+Used to consume big data
+
 Streaming data is generated continuously by thousands of sources, in smaller sizes (eg stock prices)
 
 Kinesis is a platform for loading, analyzing streaming data

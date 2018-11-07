@@ -1,6 +1,11 @@
 Allows web applications to be designed as a coordination of tasks
 Tasks are invocations of various processing steps (similiar to Cloudwatch events)
 
+SWF Actors:
+  - Workflow Starters - an applciation that can initiate a workflow
+  - Deciders - Control the flow of activity tasks and decides what to do next
+  - Activity Workers - Carry out activity tasks
+
 Workers are programs that work with SWF
   - Gets Task
   - Process received task
