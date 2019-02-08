@@ -50,7 +50,7 @@ Resources:
   WebsiteSG:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      VpcId: !Ref VpcId
+      VpcId: !Ref SacraVPC 
       SecurityGroupEgress:
         - CidrIp: 0.0.0.0/0
           IpProtocol: -1
@@ -65,7 +65,7 @@ Resources:
   DatabaseSG:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      VpcId: !Ref VpcId
+      VpcId: !Ref SacraVPC 
       SecurityGroupEgress:
         - CidrIp: 0.0.0.0/0
           IpProtocol: -1
@@ -85,14 +85,6 @@ Resources:
       VolumeType: gp2
       AvailabilityZone: us-west-2a
 
-  DatabaseEBS:
-    Type: AWS::EC2::Volume
-    DependsOn: SacraPublicSubnet
-    Properties:
-      Size: 18
-      VolumeType: gp2
-      AvailabilityZone: us-west-2a
-
   WordpressHost:
     Type: AWS::EC2::Instance
     DependsOn: WebsiteEBS
@@ -102,6 +94,21 @@ Resources:
       ImageId: ami-035be7bafff33b6b6
       InstanceType: t3.micro
       SecurityGroupIds: !Ref WebsiteSG
+
+  DBHost:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      DBSubnetGroupName: !Ref SacraPrivateSubnet
+      DBSecurityGroups: !Ref DatabaseSG
+      Engine: mysql
+      PubliclyAccessible: flase
+      AvailabilityZone: us-west-2a
+      DBInstanceClass: db.t2.micro
+      DBName: wordpress
+      MasterUsername: wordpress
+      MasterUserPassword: changeme123
+      AutoMinorVersionUpgrade: yes
+      BackupRetentionPeriod: 1
 
   Mountpoint:
     Type: AWS::EC2::VolumeAttachment
