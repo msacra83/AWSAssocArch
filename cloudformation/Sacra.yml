@@ -1,0 +1,111 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Master template for creating a Linux ECS cluster."
+
+Parameters:
+
+  Ec2Key:
+    Type: String
+
+Resources:
+
+  SacraVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+
+  SacraPublicSubnet:
+    Type: AWS::EC2::Subnet
+    DependsOn: SacraVPC
+    Properties:
+      CidrBlock: 10.0.100.0/24
+      AvailabilityZone: us-west-2a
+      VpcId: !Ref SacraVPC
+
+  SacraPrivateSubnet:
+    Type: AWS::EC2::Subnet
+    DependsOn: SacraVPC
+    Properties:
+      CidrBlock: 10.0.200.0/24
+      AvailabilityZone: us-west-2a
+      VpcId: !Ref SacraVPC
+
+  SacraRouteTable:
+    Type: AWS::EC2::RouteTable
+    DependsOn: SacraVPC
+    Properties:
+      VpcId: !Ref SacraVPC
+
+  SacraIGW:
+    Type: AWS::EC2::InternetGateway
+    DependsOn: SacraVPC
+
+  SacraIGWAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    DependsOn: SacraIGW
+    Properties:
+      InternetGatewayId: !Ref SacraIGW
+      VpcId: !Ref SacraVPC
+
+  WebsiteSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      VpcId: !Ref VpcId
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          IpProtocol: -1
+          FromPort: -1
+          ToPort: -1
+      SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+          IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+
+  DatabaseSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      VpcId: !Ref VpcId
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          IpProtocol: -1
+          FromPort: -1
+          ToPort: -1
+      SecurityGroupIngress:
+        - CidrIp: !Ref WebsiteSG
+          IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+
+  WebsiteEBS:
+    Type: AWS::EC2::Volume
+    DependsOn: SacraPublicSubnet
+    Properties:
+      Size: 12
+      VolumeType: gp2
+      AvailabilityZone: us-west-2a
+
+  DatabaseEBS:
+    Type: AWS::EC2::Volume
+    DependsOn: SacraPublicSubnet
+    Properties:
+      Size: 18
+      VolumeType: gp2
+      AvailabilityZone: us-west-2a
+
+  WordpressHost:
+    Type: AWS::EC2::Instance
+    DependsOn: WebsiteEBS
+    Properties:
+      KeyName: !Ref Ec2Key
+      SubnetId: !Ref SacraPublicSubnet
+      ImageId: ami-035be7bafff33b6b6
+      InstanceType: t3.micro
+      SecurityGroupIds: !Ref WebsiteSG
+
+  Mountpoint:
+    Type: AWS::EC2::VolumeAttachment
+    DependsOn: WordpressHost
+    Properties:
+      InstanceId: !Ref WordpressHost
+      VolumeId: !Ref WebsiteEBS
